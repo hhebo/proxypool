@@ -24,5 +24,9 @@ class RedisClient(object):
         except Exception:
             return None
 
+    @property
+    def length(self):
+        return self._db.llen('proxies')
+
     def flush(self):
         self._db.flushall()

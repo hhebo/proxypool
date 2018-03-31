@@ -19,7 +19,7 @@ class ProxyMetaClass(type):
 
 
 class FreeProxyGetter(object, metaclass=ProxyMetaClass):
-    def get_raw_proxy(self, callback):
+    def get_raw_proxies(self, callback):
         proxies = []
         for proxy in eval("self.{}()".format(callback)):
             proxies.append(proxy)
