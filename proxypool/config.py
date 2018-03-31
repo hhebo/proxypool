@@ -34,7 +34,7 @@ POOL_LOWER_THRESHOLD = 20
 POOL_UPPER_THRESHOLD = 100
 
 # 测试API
-TEST_API = 'https://httpbin.org/ip'
+TEST_API = 'http://www.baidu.com'
 
 # 获得代理测试时间界限
 get_proxy_timeout = 10

@@ -31,7 +31,8 @@ class ValidityTester(object):
                         proxy = proxy.decode('utf-8')
                     real_proxy = 'http://' + proxy
                     print('测试 ip', proxy)
-                    async with session.get(self.test_api, proxy=real_proxy, timeout=get_proxy_timeout) as response:
+                    async with session.get(self.test_api, proxy=real_proxy, timeout=get_proxy_timeout,
+                                           allow_redirects=False) as response:
                         if response.status == 200:
                             self._conn.put(proxy)
                             print('可用 ip', proxy)
