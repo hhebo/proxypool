@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import redis
-from .config import HOST, PORT, PASSWORD
+from proxypool.config import HOST, PORT, PASSWORD
 
 
 class RedisClient(object):
@@ -21,7 +21,7 @@ class RedisClient(object):
     def pop(self):
         try:
             return self._db.rpop('proxies').decode('utf-8')
-        except:
+        except Exception:
             return None
 
     def flush(self):
